@@ -4,13 +4,19 @@
     <div class="card">
       <div class="body">
         <div class="conteudo">
-          <input
-            type="text"
-            class="form-control"
-            v-model="moedaA_value"
-            v-bind:placeholder="moedaA"
-          />
-          <input type="button" class="btn btn-danger" v-on:click="converter" value="converter" />
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              v-model="moedaA_value"
+              v-bind:placeholder="moedaA"
+            />
+            <div class="input-group-append">
+              <button type="button" class="btn btn-success" v-on:click="converter">
+                <span class="fa fa-usd"></span>
+              </button>
+            </div>
+          </div>
         </div>
         <h2>{{moedaB_value}}</h2>
       </div>
@@ -50,10 +56,16 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  width: 100%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
 .conteudo {
   display: flex;
 }
 .card h2 {
-  margin-top: auto;
+  margin-top: 10px;
+  margin-left: 6px;
 }
 </style>
