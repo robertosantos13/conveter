@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="text-center">
+      <h1>
+        Conversor de moedas
+        <span class="fa fa-money" arial-hidden="true"></span>
+      </h1>
+      <p
+        class="text-success"
+      >Este é um simples projetos de conversor de moedas para desenvolvimento pessoal.</p>
+    </div>
+    <div class="container">
+      <Conversor moedaA="USD" moedaB="BRL" />
+      <Conversor moedaA="BRL" moedaB="USD" />
+    </div>
+    <div class="container">
+      <Conversor moedaA="EUR" moedaB="BRL" />
+      <Conversor moedaA="BRL" moedaB="EUR" />
+    </div>
+    <div class="container">
+      <Conversor moedaA="CAD" moedaB="BRL" />
+      <Conversor moedaA="BRL" moedaB="CAD" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Conversor from "./components/Conversor";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Conversor
   }
-}
+};
 </script>
-
+  
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+.text-center {
+  margin-bottom: 60px;
 }
 </style>
