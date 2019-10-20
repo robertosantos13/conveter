@@ -7,7 +7,7 @@
       </h1>
       <p
         class="text-success"
-      >Este é um simples projetos de conversor de moedas para desenvolvimento pessoal.</p>
+      >Este é um simples projeto de conversor de moedas para desenvolvimento pessoal.</p>
     </div>
     <div class="container">
       <Conversor moedaA="USD" moedaB="BRL" />
