@@ -7,12 +7,13 @@
           <div class="input-group">
             <input
               type="text"
+              v-on:keyup.enter="converter()"
               class="form-control"
               v-model="moedaA_value"
               v-bind:placeholder="moedaA"
             />
             <div class="input-group-append">
-              <button type="button" class="btn btn-success" v-on:click="converter">
+              <button type="button" class="btn btn-success" v-on:click="converter()">
                 <span class="fa fa-usd"></span>
               </button>
             </div>
@@ -49,6 +50,7 @@ export default {
           this.moedaB_value = parseFloat(cotacao * this.moedaA_value).toFixed(
             2
           );
+          this.moedaA_value = "";
         });
     }
   }
