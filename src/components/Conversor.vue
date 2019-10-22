@@ -1,25 +1,25 @@
 <template>
   <div class="main">
-    {{moedaA}} Para {{moedaB}}
+    {{moneyB}} Para {{moneyA}}
     <div class="card">
       <div class="body">
         <div class="conteudo">
           <div class="input-group">
             <input
               type="text"
-              v-on:keydown="converter()"
+              v-on:keydown="getUrlConverter()"
               class="form-control"
-              v-model="moedaA_value"
-              v-bind:placeholder="moedaA"
+              v-model="moneyA_value"
+              v-bind:placeholder="moneyA"
             />
             <div class="input-group-append">
-              <button type="button" class="btn btn-success" v-on:click="converter()">
+              <button type="button" class="btn btn-success" v-on:click="getUrlConverter()">
                 <span class="fa fa-usd"></span>
               </button>
             </div>
           </div>
         </div>
-        <h2>{{moedaB_value}}</h2>
+        <h2>{{moneyB_value}}</h2>
       </div>
     </div>
   </div>
@@ -30,24 +30,24 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 export default {
   name: "Conversor",
-  props: ["moedaA", "moedaB"],
+  props: ["moneyA", "moneyB"],
   data: function() {
     return {
-      moedaA_value: "",
-      moedaB_value: 0
+      moneyA_value: "",
+      moneyB_value: 0
     };
   },
   methods: {
-    converter: function() {
-      let url = "https://api.exchangerate-api.com/v4/latest/" + this.moedaB;
+    getUrlConverter: function() {
+      let url = "https://api.exchangerate-api.com/v4/latest/" + this.moneyB;
 
       fetch(url)
         .then(response => {
           return response.json();
         })
-        .then(json => {
-          let cotacao = json.rates[this.moedaA];
-          this.moedaB_value = parseFloat(cotacao * this.moedaA_value).toFixed(
+        .then(data => {
+          let quotation = data.rates[this.moneyA];
+          this.moneyB_value = parseFloat(quotation * this.moneyA_value).toFixed(
             2
           );
         });

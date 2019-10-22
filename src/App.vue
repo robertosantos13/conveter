@@ -10,16 +10,16 @@
       >Este é um simples projeto de conversor de moedas para desenvolvimento pessoal.</p>
     </div>
     <div class="container">
-      <Conversor moedaA="USD" moedaB="BRL" />
-      <Conversor moedaA="BRL" moedaB="USD" />
+      <Conversor moneyB="BRL" moneyA="USD" />
+      <Conversor moneyB="USD" moneyA="BRL" />
     </div>
     <div class="container">
-      <Conversor moedaA="EUR" moedaB="BRL" />
-      <Conversor moedaA="BRL" moedaB="EUR" />
+      <Conversor moneyB="BRL" moneyA="EUR" />
+      <Conversor moneyB="EUR" moneyA="BRL" />
     </div>
     <div class="container">
-      <Conversor moedaA="CAD" moedaB="BRL" />
-      <Conversor moedaA="BRL" moedaB="CAD" />
+      <Conversor moneyB="BRL" moneyA="CAD" />
+      <Conversor moneyB="CAD" moneyA="BRL" />
     </div>
   </div>
 </template>
